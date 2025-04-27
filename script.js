@@ -47,7 +47,7 @@ window.addEventListener("resize", function () {
 });
 
 
-const frameCount = 260;
+const frameCount = 261;
 const frames = [];
 
 for (let i = 0; i < 218; i++) {
