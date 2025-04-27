@@ -51,7 +51,7 @@ const frameCount = 261;
 const frames = [];
 
 for (let i = 0; i < 218; i++) {
-  const filename = `Selected_webp/frame_${String(i).padStart(4, '0')}.webp`;
+  const filename = `Avif/frame_${String(i).padStart(4, '0')}.avif`;
   frames.push(filename);
 }
 
