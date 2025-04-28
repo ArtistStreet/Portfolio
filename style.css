@@ -3,22 +3,61 @@
     --sub-text-color: #ffffff;
 }
 
+@font-face {
+    font-family: 'Auriviel';
+    src: url('auriviel.regular.ttf') format('truetype');
+}
+
 * {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    font-family: gilroy;
+    /* font-family: gilroy; */
+    font-family: 'Auriviel', sans-serif;
+    letter-spacing: 0.1em;
 }
 
 html,
 body {
     height: 100%;
     width: 100%;
+    font-size: 62.5%;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 9999;
+}
+
+body.loading {
+    overflow: hidden;
 }
 
 h1 {
     color: var(--default-text-color);
+    font-size: clamp(2.5rem, 2vw, 4rem);
 }
+
+h3 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+h4,
+p {
+    font-size: 1.5rem;
+    color: var(--sub-text-color);
+}
+
 
 #main {
     position: relative;
@@ -35,7 +74,6 @@ h1 {
 #page>h3>span {
     color: var(--default-text-color);
     font-weight: 600;
-    font-size: 30px;
 }
 
 #page1 {
@@ -56,6 +94,8 @@ h1 {
     position: relative;
     height: 100vh;
     width: 100vw;
+    display: flex;
+    align-items: center;
 }
 
 #page3>img {
@@ -78,14 +118,12 @@ canvas {
     display: flex;
     position: absolute;
     top: 30%;
-    height: 25%;
     width: 100%;
-    font-size: 100px;
     white-space: nowrap;
-    font-family: gilroy;
 }
 
 #loop>h1 {
+    font-size: clamp(8rem, 6vw, 10rem);
     font-weight: 400;
     animation-name: anim;
     animation-duration: 15s;
@@ -135,11 +173,11 @@ canvas {
 #nav>h3 {
     font-family: gilroy;
     font-weight: 400;
-    font-size: 22px;
 }
 
 #nav>button {
-    padding: 10px 20px;
+    font-size: 1.5rem;
+    padding: 10px 10px;
     border-radius: 50px;
     background-color: black;
     color: var(--default-text-color);
@@ -148,7 +186,8 @@ canvas {
 }
 
 #footer>a {
-    padding: 10px 20px;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    padding: 10px 10px;
     border-radius: 50px;
     color: var(--default-text-color);
     border: none;
@@ -159,26 +198,29 @@ canvas {
     justify-content: center;
     height: 75%;
     width: 25%;
-    filter: blur(1px);
-    /* background-color: var(--default-text-color); */
-    -webkit-filter: blur(1px);
+    /* filter: blur(1px); */
     background-color: rgba(0, 0, 0, 1);
+}
+
+#footer #social-media {
+    display: none;
 }
 
 #page>h3 {
     position: absolute;
-    top: 55%;
+    top: 50%;
     font-family: gilroy;
     font-weight: 400;
     color: var(--sub-text-color);
     left: 5%;
+    word-wrap: break-word;
+    width: clamp(35rem, 5vw, 50rem);
 }
 
 #page>h4 {
     position: absolute;
     top: 62%;
     left: 25%;
-    font-family: gilroy;
     font-weight: 500;
 }
 
@@ -195,7 +237,7 @@ canvas {
 
 #page1>#right-text>h1 {
     line-height: 1.5;
-    font-size: 50px;
+
 }
 
 #page1>#left-text {
@@ -206,7 +248,6 @@ canvas {
 }
 
 #page1>#left-text>h1 {
-    font-size: 50px;
     line-height: 1.5;
 }
 
@@ -227,13 +268,13 @@ canvas {
 }
 
 #page2>#text1>h1 {
-    font-size: 60px;
+    /* font-size: 4rem; */
     line-height: 1.5;
 }
 
 #page2>#text2 {
     position: absolute;
-    top: 55%;
+    top: 50%;
     right: 10%;
     text-align: end;
     width: 25%;
@@ -247,7 +288,6 @@ canvas {
 
 #page3>.page3-container {
     position: absolute;
-    top: 40%;
     left: 10%;
     text-align: start;
     width: 30%;
@@ -260,13 +300,11 @@ canvas {
 }
 
 #page3 p {
-    color: var(--sub-text-color);
-    font-weight: 400;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-#page3 p>a {
+#page3 a {
     font-size: larger;
     font-weight: 600;
     text-decoration: none;
@@ -276,12 +314,85 @@ canvas {
 #page3 .social-media {
     align-items: center;
     justify-content: flex-start;
-    height: 50px;
+    height: 5rem;
     display: flex;
 }
 
 #page3 .social-media i {
-    margin: 0px 10px;
-    font-size: 30px;
+    font-size: 3rem;
     color: var(--default-text-color);
+}
+
+#page3 .social-media a+a {
+    margin-left: 2rem;
+}
+
+
+/* Responsive */
+@media screen and (max-width: 740px) {
+    #footer {
+        height: 15%;
+    }
+
+    #footer>a {
+        display: none;
+        /* width: 100%; */
+    }
+
+    #footer #social-media {
+        font-size: clamp(1.4rem, 2.5vw, 2rem);
+        border-radius: 10px;
+        color: var(--default-text-color);
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        justify-content: space-between;
+        width: 100%;
+        background-color: rgb(0 0 0 / 50%);
+        backdrop-filter: blur(5px);
+    }
+
+    #footer .image {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        left: 1rem;
+        position: relative;
+    }
+
+    #footer .image>h3 {
+        padding-left: 0.5rem;
+    }
+
+    #footer img {
+        height: 70%;
+        border-radius: 1rem;
+    }
+
+    #footer #social-media {
+        align-items: center;
+        height: 50%;
+        display: flex;
+    }
+
+    #footer #social-media i {
+        font-size: 3rem;
+        color: var(--default-text-color);
+    }
+
+    #footer #social-media a {
+        margin: 0px 1rem;
+    }
+
+    #page2>#text2 {
+        width: 60%;
+    }
+
+    #page3 .social-media {
+        display: none;
+    }
+
+    #page3>.page3-container {
+        width: 55%;
+    }
 }

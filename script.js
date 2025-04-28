@@ -47,11 +47,11 @@ window.addEventListener("resize", function () {
 });
 
 
-const frameCount = 261;
+const frameCount = 218;
 const frames = [];
 
-for (let i = 0; i < 218; i++) {
-  const filename = `Avif/frame_${String(i).padStart(4, '0')}.avif`;
+for (let i = 0; i < frameCount; i++) {
+  const filename = `Avif_lower/frame_${String(i).padStart(4, '0')}.avif`;
   frames.push(filename);
 }
 
@@ -63,15 +63,29 @@ const images = [];
 const imageSeq = {
   frame: 0,
 };
+let imagesLoaded = 0;
 
 for (let i = 0; i < frameCount; i++) {
   const img = new Image();
   img.src = files(i);
+  img.onload = () => {
+    imagesLoaded++;
+    if (imagesLoaded === 217) {
+      console.log("✅ All images loaded!");
+      loadingFinished();
+    }
+  };
   images.push(img);
 }
 
+function loadingFinished() {
+  const loadingScreen = document.getElementById('loading-screen');
+  loadingScreen.style.display = 'none';
+  document.body.classList.remove('loading');
+}
+
 gsap.to(imageSeq, {
-  frame: frameCount - 1,
+  frame: 260,
   snap: "frame",
   ease: `none`,
   scrollTrigger: {
@@ -89,6 +103,13 @@ images[1].onload = render;
 function render() {
   scaleImage(images[imageSeq.frame], context);
 }
+
+
+// function loadingFinished() {
+//   const loadingScreen = document.getElementById('loading-screen');
+//   loadingScreen.style.display = 'none';
+//   document.body.classList.remove('loading');
+// }
 
 function scaleImage(img, ctx) {
   var canvas = ctx.canvas;
@@ -113,13 +134,10 @@ function scaleImage(img, ctx) {
 ScrollTrigger.create({
   trigger: "#page>canvas",
   pin: true,
-  // markers:true,
   scroller: `#main`,
   start: `top top`,
   end: `600% top`,
 });
-
-
 
 gsap.to("#page1", {
   scrollTrigger: {
@@ -139,12 +157,3 @@ gsap.to("#page2", {
     scroller: `#main`
   }
 })
-// gsap.to("#page3", {
-//   scrollTrigger: {
-//     trigger: `#page3`,
-//     start: `top top`,
-//     end: `bottom top`,
-//     pin: true,
-//     scroller: `#main`
-//   }
-// })
