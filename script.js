@@ -32,6 +32,10 @@ function locomotive() {
 }
 locomotive();
 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
 
 const canvas = document.querySelector("canvas");
 const context = canvas.getContext("2d");
@@ -150,3 +154,4 @@ gsap.to("#page2", {
     scroller: `#main`
   }
 })
+

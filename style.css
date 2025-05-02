@@ -258,7 +258,7 @@ canvas {
 
 #page2>#text1 {
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 10%;
 }
 
@@ -268,13 +268,12 @@ canvas {
 }
 
 #page2>#text1>h1 {
-    /* font-size: 4rem; */
     line-height: 1.5;
 }
 
 #page2>#text2 {
     position: absolute;
-    top: 50%;
+    top: 55%;
     right: 10%;
     text-align: end;
     width: 25%;
@@ -330,7 +329,7 @@ canvas {
 
 /* Responsive */
 @media screen and (max-width: 740px) {
-    #nav > button {
+    #nav>button {
         display: none;
     }
 
