@@ -71,7 +71,7 @@ for (let i = 0; i < frameCount; i++) {
   img.onload = () => {
     imagesLoaded++;
     if (imagesLoaded === 217) {
-      console.log("✅ All images loaded!");
+      // console.log("✅ All images loaded!");
       loadingFinished();
     }
   };
@@ -103,13 +103,6 @@ images[1].onload = render;
 function render() {
   scaleImage(images[imageSeq.frame], context);
 }
-
-
-// function loadingFinished() {
-//   const loadingScreen = document.getElementById('loading-screen');
-//   loadingScreen.style.display = 'none';
-//   document.body.classList.remove('loading');
-// }
 
 function scaleImage(img, ctx) {
   var canvas = ctx.canvas;
