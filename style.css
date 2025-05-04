@@ -197,8 +197,6 @@ canvas {
     align-items: center;
     justify-content: center;
     height: 75%;
-    width: 25%;
-    /* filter: blur(1px); */
     background-color: rgba(0, 0, 0, 1);
 }
 
@@ -260,6 +258,7 @@ canvas {
     position: absolute;
     top: 25%;
     left: 10%;
+    /* margin-top: 15rem; */
 }
 
 #page2>#text1>h3 {
@@ -273,7 +272,7 @@ canvas {
 
 #page2>#text2 {
     position: absolute;
-    top: 55%;
+    top: 50%;
     right: 10%;
     text-align: end;
     width: 25%;
@@ -399,3 +398,5 @@ canvas {
         width: 55%;
     }
 }
+
+@media screen and (max-width: 1024px) {}
