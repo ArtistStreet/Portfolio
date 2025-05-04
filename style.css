@@ -80,14 +80,16 @@ p {
     position: relative;
     height: 100vh;
     width: 100vw;
-    background-color: transparent;
 }
 
 #page2 {
     position: relative;
     height: 100vh;
     width: 100vw;
-    background-color: transparent;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #page3 {
@@ -255,9 +257,9 @@ canvas {
 }
 
 #page2>#text1 {
-    position: absolute;
+    /* position: absolute;
     top: 25%;
-    left: 10%;
+    left: 10%; */
     /* margin-top: 15rem; */
 }
 
@@ -271,9 +273,9 @@ canvas {
 }
 
 #page2>#text2 {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
-    right: 10%;
+    right: 10%; */
     text-align: end;
     width: 25%;
     word-wrap: break-word;
@@ -327,7 +329,7 @@ canvas {
 
 
 /* Responsive */
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 740px) {
     #nav>button {
         display: none;
     }
