@@ -327,7 +327,7 @@ canvas {
 
 
 /* Responsive */
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 1025px) {
     #nav>button {
         display: none;
     }

@@ -1,3 +1,7 @@
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
 function locomotive() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -32,9 +36,6 @@ function locomotive() {
 }
 locomotive();
 
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
 
 
 const canvas = document.querySelector("canvas");
