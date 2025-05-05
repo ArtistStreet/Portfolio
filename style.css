@@ -76,12 +76,7 @@ p {
     font-weight: 600;
 }
 
-#page1 {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-}
-
+#page1,
 #page2 {
     position: relative;
     height: 100vh;
@@ -224,11 +219,11 @@ canvas {
     font-weight: 500;
 }
 
-#page1>#right-text {
+/* #page1>#right-text {
     position: absolute;
     top: 30%;
     left: 10%;
-}
+} */
 
 #page1>#right-text>h3 {
     font-weight: 400;
@@ -241,10 +236,7 @@ canvas {
 }
 
 #page1>#left-text {
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    text-align: end;
+    width: 100% !important;
 }
 
 #page1>#left-text>h1 {
@@ -256,11 +248,9 @@ canvas {
     font-weight: 400;
 }
 
+#page1>#right-text,
 #page2>#text1 {
-    /* position: absolute;
-    top: 25%;
-    left: 10%; */
-    margin-top: 15rem;
+    margin-top: 10rem;
 }
 
 #page2>#text1>h3 {
@@ -272,11 +262,12 @@ canvas {
     line-height: 1.5;
 }
 
+#page1>#left-text,
 #page2>#text2 {
     text-align: end;
     width: 25%;
     word-wrap: break-word;
-    margin-bottom: 15rem;
+    margin-bottom: 10rem;
     margin-left: auto;
 }
 
@@ -387,9 +378,19 @@ canvas {
         margin-left: clamp(0.1rem, 1vw, 0.7rem);
     }
 
+    #page2>#text1,
+    #page1>#right-text {
+        margin-top: 15rem;
+    }
+
+    #page1>#left-text {
+        margin-bottom: 15rem;
+    }
+
     #page2>#text2 {
         width: 80%;
         margin-left: 20%;
+        margin-bottom: 15rem;
     }
 
     #page3 .social-media {
