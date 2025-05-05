@@ -402,4 +402,31 @@ canvas {
     }
 }
 
-@media screen and (max-width: 1024px) {}
+@media screen and (min-width: 740px) and (max-width: 1024px) {
+    #nav>button {
+        display: none;
+    }
+
+    #page1,
+    #page2 {
+        padding: 5% 10%;
+    }
+
+    #page1>#right-text,
+    #page2>#text1,
+    #page1>#left-text
+
+    /* #page2>#text2  */
+        {
+        margin: 0;
+    }
+
+    #page2>#text2 {
+        width: 75%;
+        margin-bottom: 0;
+    }
+
+    #page3>.page3-container {
+        width: 50%;
+    }
+}
