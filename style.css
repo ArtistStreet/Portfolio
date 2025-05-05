@@ -86,7 +86,7 @@ p {
     position: relative;
     height: 100vh;
     width: 100vw;
-    padding: 15%;
+    padding: 10%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -273,14 +273,11 @@ canvas {
 }
 
 #page2>#text2 {
-    /* position: absolute;
-    top: 50%;
-    right: 10%; */
     text-align: end;
     width: 25%;
     word-wrap: break-word;
     margin-bottom: 15rem;
-    margin-left: 40%;
+    margin-left: auto;
 }
 
 #page2>#text2>p {
@@ -391,7 +388,8 @@ canvas {
     }
 
     #page2>#text2 {
-        width: 60%;
+        width: 80%;
+        margin-left: 20%;
     }
 
     #page3 .social-media {
